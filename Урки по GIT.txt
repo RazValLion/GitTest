@@ -1,0 +1,70 @@
+контроль версий
+нужен для сохранения истории с возмжностью откатиться назад
+
+Команды
+	git --version
+	git init - инициалиазация
+    git add . - добавляем файлы
+    git commit -m "first commit" 
+    git config --list - вывод конфигурации git
+Ход курса
+	
+	Создаём локальное хранилище 
+        Сздаём папку и открываем в VS Code
+        создаем фал HTML заполняем его ! - стандартной разметкой
+            <!DOCTYPE html>
+            <html lang="en" lang="ru">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title> Работа с GIT </title>
+            </head>
+            <body>
+                <p>Git + GitHub </p>
+            </body>
+            </html>
+        создаем папку CSS + фал main.css 
+            body {
+            background-color: aqua;
+            }
+        подключаем main.css в index.html
+            <link rel="stylesheet" href="CSS/main.css">
+        
+        в vs Code переходим в git создаём терминал (создаётся прямо в нужной дериктории) 
+        или открываем в командной строке необходимую папку 
+        и инициализируем репозиторий initialize Repozitory
+            появляется скрытая папка git.
+        
+        инициализация через командную строку
+            в консоле выходим на папку проекта
+            git init - инициализация 
+                example
+                    PS D:\Val\WEB\GitHUB\GitTest> git init
+                    Initialized empty Git repository in D:/Val/WEB/GitHUB/GitTest/.git/
+
+    #3
+        На сайте нажимаем добавить репозиторий и заполняем предложенную форму 
+            privet - только платно
+        
+        вводим следующие команды 
+            git config --global user.email "nigtnel@mail.ru"
+            git config --global user.name "RazValLion"
+                проверяем командой  
+                git config --list
+                результат проверки должны появиться 
+                    user.email=nigtnel@mail.ru
+                    user.name=RazValLion
+            git init
+            git add README.md
+            git commit -m "first commit"
+                результат
+                    [master (root-commit) 3638e6a] first commit
+                    3 files changed, 80 insertions(+)
+                    create mode 100644 CSS/main.css
+                    create mode 100644 Index.html
+                    create mode 100644 "\320\243\321\200\320\272\320\270 \320\277\320\276 GIT.txt"
+            git remote add origin https://github.com/RazValLion/GitTest.git
+                ссылку можно с командой скопировать с сайта
+            git branch -M main
+            git push -u origin main
