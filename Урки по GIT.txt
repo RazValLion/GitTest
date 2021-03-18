@@ -5,9 +5,11 @@
 	git --version
 	git init - инициалиазация
     git add . - добавляем файлы
-    git commit -m "first commit" 
+    git commit -m "first commit" отправляем коммит с дескриптором изменения
     git config --list - вывод конфигурации git
     git clone 
+    git push - залить всё на сервер
+    git status - посмотреть статус                
 Ход курса
 	
 	Создаём локальное хранилище 
@@ -57,8 +59,10 @@
                     user.email=nigtnel@mail.ru
                     user.name=RazValLion
             git init
-            git add README.md
-            git commit -m "first commit"
+            git add "index.html"
+            git add . - добавляем все файлы 
+            git add "имя файла" - добавляем конкретный фаайл
+            git commit -m "first commit" 
                 результат
                     [master (root-commit) 3638e6a] first commit
                     3 files changed, 80 insertions(+)
@@ -69,7 +73,13 @@
                 ссылку можно с командой скопировать с сайта
             git branch -M main
             git push -u origin main
+            git status
+                если маркикруеться красным значит не добавлены
+                если зелёным значит уже добавлены и готовы к отправке
         
+        Маркировки состояний файлов
+            m на против файла означает модифицирован
+
         для того чтобы дать другому разработчику доступ до редактирования репозитория необходимо нажать commit в самом репозитории
         SETTINGS > mangage access > invate a collaborator
             ищем пользователя и даём ее пользователю, пользователь проходит по ней и получает доступ к правке кода.
@@ -82,5 +92,23 @@
             Находим нужный репозиторий берём от туда ссылку
             в командной строке выбираем где будет развёрнут клонированный репозиторий
             и применяем git clone и вставляем ссылку репозитория
-    3 19
+
+        плагин Git History  Diff
+            для наглядности добавим изменения в файле main.css
+                p {
+                color: rgba(121, 12, 21, 0.878);
+                }
+                h2 {
+                font-size: 50px;
+                }
+            и в index.html
+                    <h2>Hello</h2>
+                        <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quidem,
+                        molestias ducimus, sapiente expedita iure suscipit natus tenetur ipsa
+                        similique debitis eveniet aspernatur perspiciatis est fuga voluptatum
+                        laboriosam odio eos.
+                        </p>
+        git status - посмотреть статус                
+        git push - залить всё на сервер
             
