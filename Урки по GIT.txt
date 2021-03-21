@@ -6,11 +6,18 @@
 	git init - инициалиазация
     git add . - добавляем файлы
     git commit -m "first commit" отправляем коммит с дескриптором изменения
+        альтернатива в vs code в левой меню выбираем source controle 
+            нажимаем галочку (commit) вводим комментарий.
+            для отправки на сервер выбираем more action > push
     git config --list - вывод конфигурации git
     git clone 
     git push - залить всё на сервер
     git status - посмотреть статус                
     git pull - подгружает все изменения с облака
+    git checkout -- .\Index.html
+        последние изменения удаляются
+            alias 
+                git co -- .\Index.html
 Ход курса
 	
 	Создаём локальное хранилище 
@@ -70,8 +77,6 @@
                     create mode 100644 CSS/main.css
                     create mode 100644 Index.html
                     create mode 100644 "\320\243\321\200\320\272\320\270 \320\277\320\276 GIT.txt"
-            альтернатива в vs code в левой меню выбираем source controle 
-                нажимаем галочку (commit) вводим комментарий.
             
             git remote add origin https://github.com/RazValLion/GitTest.git
                 ссылку можно с командой скопировать с сайта
@@ -121,4 +126,33 @@
         Рабочий день начинается с команды 
             git pull
                 команда подгружает все изменения с облака актуализирует историю  
-        
+    
+    6#  alias
+        находим файл .gitconfig в C:\Users\Nigtn
+        открываем файл на редактирование и добавляем сокращённые команды:
+            s = status --short
+            st = status
+            l = log --oneline --graph --decorate --all
+            g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
+            br = branch
+            co = checkout
+
+    7#  отмена всех изменений
+        можно стрелкой в vs code
+        или в консоле черз команду 
+        git checkout -- .\Index.html
+            последние изменения удаляются
+            alias 
+                git co -- .\Index.html
+            если надо в нескольких файлах отменить то просто пользуемся точкой 
+                git co .
+        если изменения уже в stage (статус маркирует зелёным) то отменяем командой
+            git reset .\Index.html
+                проверяем 
+                    git s
+                        статус меняется с зелёного на красный
+            далее пользуемся командой 
+            git co -- .\Index.html
+                все изменения исчезают
+            
+
