@@ -154,5 +154,28 @@
             далее пользуемся командой 
             git co -- .\Index.html
                 все изменения исчезают
-            
-
+        
+        если именения уже прошли commit
+            Добавим в index.html:
+                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, quam neque. Nam, nisi sed tenetur culpa quo nostrum dolorem omnis distinctio porro, eveniet placeat inventore? Tempore magnam delectus dolorum sed.</P>
+                <h4>Title</h4>
+            смотрим статус
+                git s
+                    получаем 
+                    M Index.html (м - красный (модфицированный))
+            добавляем его
+                git add .
+                    получаем 
+                    M Index.html (м - зелёный (добавленный))
+            делаем commit -m 
+                git commit -m "Новый абзац и заголовок"
+            проверяем 
+                git l
+                    видим
+                        PS D:\Val\WEB\GitHUB\GitTest> git l  
+                        * fc0cc9f (HEAD -> main) Новый абзац и заголовок
+                            остальное удалил
+            Удаляем не нужный результат commit 
+                git reset --hard HEAD^1
+                    тоесть вернутся на один commit назад с помощью жёсткого reset
+                    
