@@ -156,7 +156,7 @@
                 все изменения исчезают
         
         если именения уже прошли commit
-            Добавим в index.html:
+            к примеру добавим в index.html:
                 <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, quam neque. Nam, nisi sed tenetur culpa quo nostrum dolorem omnis distinctio porro, eveniet placeat inventore? Tempore magnam delectus dolorum sed.</P>
                 <h4>Title</h4>
             смотрим статус
