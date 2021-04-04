@@ -211,3 +211,6 @@
             сохраним изменения 
                 git add .
                 git commit -m "Новая ветка"
+                проверяем
+                    git log
+                        ebaf5a4 (HEAD -> develop) овая ветка
