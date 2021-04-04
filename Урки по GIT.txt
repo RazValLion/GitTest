@@ -28,6 +28,7 @@
         alias
             git br
     git branch develop - создаём новую ветку с названием develop
+    git branch - d new_branch - удаляем ветку с названием new_branch
     git checkout develop -  переключаемся на новую ветку на прмер develop
     git checkout -b help - создаёт новую ветку help и сразу переключает нас в неё
     git branch -m myfix - переименование текущей ветки
@@ -226,4 +227,7 @@
             в этом коммите так же можно создать ветку в ней будут изменения только до того коммита в который мы откатились
         если сделана новая ветка то её надо добавлять так  
             git push --set-upstream origin new_branch
+        удаление ветки
+            git br -d new_branch
+    9#
             
