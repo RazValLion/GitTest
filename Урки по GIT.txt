@@ -24,6 +24,12 @@
             git l
     git reset --hard HEAD^1 - отмена последнего коммита с удалением в редакторе 
     git reset --soft HEAD^1 - отмена последнего коммита без удаления в редакторе 
+    git branch - показывает все ветки со * означает текущая, опция -v показывает ещё и последни commit
+        alias
+            git br
+    git branch develop - создаём новую ветку с названием develop
+    git checkout develop -  переключаемся на новую ветку на прмер develop
+            
     
 Ход курса
 	
@@ -191,4 +197,17 @@
                 git reset .
                 git co -- .
 
-    8#  
+    8#  Ветвление
+        git branch - показывает все ветки со * означает текущая, опция -v показывает ещё и последни commit
+        alias
+            git br
+        git branch develop - создаём новую ветку с названием develop
+        проверяем git br - долна появится новая ветка
+        переключаемся на новую ветку
+            git co develop    
+        добавим изменения для примера в main.css 
+            <h4>title</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, placeat?</p>
+            сохраним изменения 
+                git add .
+                git commit -m "Новая ветка"
