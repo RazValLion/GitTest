@@ -29,6 +29,7 @@
             git br
     git branch develop - создаём новую ветку с названием develop
     git checkout develop -  переключаемся на новую ветку на прмер develop
+    git checkout -b help - создаёт новую ветку help и сразу переключает нас в неё
             
     
 Ход курса
@@ -214,3 +215,5 @@
                 проверяем
                     git log
                         ebaf5a4 (HEAD -> develop) овая ветка
+                            HEAD -> - показывает в какой ветке мы сейчас находимся
+        git checkout -b about - создаёт новую ветку about и сразу переключает нас в неё
