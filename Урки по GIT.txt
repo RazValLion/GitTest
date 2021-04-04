@@ -69,7 +69,6 @@
                 example
                     PS D:\Val\WEB\GitHUB\GitTest> git init
                     Initialized empty Git repository in D:/Val/WEB/GitHUB/GitTest/.git/
-
     #3
         На сайте нажимаем добавить репозиторий и заполняем предложенную форму 
             privet - только платно
@@ -142,7 +141,6 @@
         Рабочий день начинается с команды 
             git pull
                 команда подгружает все изменения с облака актуализирует историю  
-    
     6#  alias
         находим файл .gitconfig в C:\Users\Nigtn
         открываем файл на редактирование и добавляем сокращённые команды:
@@ -152,7 +150,6 @@
             g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
             br = branch
             co = checkout
-
     7#  отмена всех изменений
         можно стрелкой в vs code
         или в консоле черз команду 
@@ -199,7 +196,6 @@
             если всёже надо отменить и в своём файле то пишем 
                 git reset .
                 git co -- .
-
     8#  Ветвление
         git branch - показывает все ветки со * означает текущая, опция -v показывает ещё и последни commit
         alias
@@ -229,5 +225,9 @@
             git push --set-upstream origin new_branch
         удаление ветки
             git br -d new_branch
-    9#
+    9#  создание GISTов - фрагмент кода который можно применить в следующих проектах
+        можно создвать на самом сайте GitHub
+            в правом верхнем углу страницы развернуть + 
+        можно создавать через редактор, что более удобно
+            устанавливаем расширение Gist Extention
             
