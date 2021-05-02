@@ -11,8 +11,9 @@
             для отправки на сервер выбираем more action > push
     git config --list - вывод конфигурации git
     git clone 
+    git remote add origin https://github.com/RazValLion/GitTest.git - Создаём репозиторий новый, например
     git push - залить всё на сервер
-    git status - посмотреть статус                
+    git status - посмотреть статус
     git pull - подгружает все изменения с облака
     git checkout -- .\Index.html
         последние изменения удаляются
@@ -24,7 +25,21 @@
             git l
     git reset --hard HEAD^1 - отмена последнего коммита с удалением в редакторе 
     git reset --soft HEAD^1 - отмена последнего коммита без удаления в редакторе 
+    git branch - показывает все ветки со * означает текущая, опция -v показывает ещё и последни commit
+        alias
+            git br
+    git branch develop - создаём новую ветку с названием develop
+    git branch - d new_branch - удаляем ветку с названием new_branch
+    git checkout develop -  переключаемся на новую ветку на прмер develop
+    git checkout -b help - создаёт новую ветку help и сразу переключает нас в неё
+    git branch -m myfix - переименование текущей ветки
+    git checkout 8875798 - переходим на коммит 8875798
     
+команды по GIST
+    F1 > GIST > create new block
+    F1 > GIST > open gist - добавляем весь gist файлом
+    F1 > GIST > Insert Code Into Current file - добавляем кусок в существующий файл локально
+
 Ход курса
 	
 	Создаём локальное хранилище 
@@ -60,7 +75,6 @@
                 example
                     PS D:\Val\WEB\GitHUB\GitTest> git init
                     Initialized empty Git repository in D:/Val/WEB/GitHUB/GitTest/.git/
-
     #3
         На сайте нажимаем добавить репозиторий и заполняем предложенную форму 
             privet - только платно
@@ -84,8 +98,8 @@
                     create mode 100644 CSS/main.css
                     create mode 100644 Index.html
                     create mode 100644 "\320\243\321\200\320\272\320\270 \320\277\320\276 GIT.txt"
-            
-            git remote add origin https://github.com/RazValLion/GitTest.git
+            Создаём репозиторий новый, например
+                git remote add origin https://github.com/RazValLion/GitTest.git
                 ссылку можно с командой скопировать с сайта
             git branch -M main
             git push -u origin main
@@ -133,7 +147,6 @@
         Рабочий день начинается с команды 
             git pull
                 команда подгружает все изменения с облака актуализирует историю  
-    
     6#  alias
         находим файл .gitconfig в C:\Users\Nigtn
         открываем файл на редактирование и добавляем сокращённые команды:
@@ -143,7 +156,6 @@
             g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
             br = branch
             co = checkout
-
     7#  отмена всех изменений
         можно стрелкой в vs code
         или в консоле черз команду 
@@ -190,5 +202,47 @@
             если всёже надо отменить и в своём файле то пишем 
                 git reset .
                 git co -- .
-
-    8#  
+    8#  Ветвление
+        git branch - показывает все ветки с * означает текущая, опция -v показывает ещё и последни commit
+        alias
+            git br
+        git branch develop - создаём новую ветку с названием develop
+        проверяем git br - долна появится новая ветка
+        переключаемся на новую ветку
+            git co develop    
+        добавим изменения для примера в main.css 
+            <h4>title</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, placeat?</p>
+            сохраним изменения 
+                git add .
+                git commit -m "Новая ветка"
+                проверяем
+                    git log
+                        ebaf5a4 (HEAD -> develop) овая ветка
+                            HEAD -> - показывает в какой ветке мы сейчас находимся
+        git checkout -b about - создаёт новую ветку about и сразу переключает нас в неё
+        переименование текущей ветки
+            git branch -m myfix 
+        откат на любой commit
+            git checkout 8875798 
+                где 8875798 код коммита
+            в этом коммите так же можно создать ветку в ней будут изменения только до того коммита в который мы откатились
+        если сделана новая ветка то её надо добавлять так  
+            git push --set-upstream origin new_branch
+        удаление ветки
+            git br -d new_branch
+    9#  создание GISTов - фрагмент кода который можно применить в следующих проектах
+        можно создвать на самом сайте GitHub
+            в правом верхнем углу страницы развернуть + 
+        можно создавать через редактор, что более удобно
+            устанавливаем расширение Gist Extention (autor Ken Howard)
+            выбираем нужный кусок кода, нажимаем F1, пишем gist
+                получаем все команды gist
+            Для создания GISTа нажимаем create new block
+            вводим описание и выбираем будет он публичный или скрытый
+            при первом вводе потребует токен, нужно создать здесь https://github.com/settings/tokens
+            можно проверять на GIT  в правом верхнем углу в профиле выбрав Your gists
+        F1 > GIST > open gist - добавляем весь gist файлом
+        F1 > GIST > Insert Code Into Current file - добавляем кусок в существующий файл локально
+         
+            
